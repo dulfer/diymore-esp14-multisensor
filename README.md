@@ -98,7 +98,16 @@ The datasheet mentions the device address depends on ADDR is high (above 0.7VCC)
 Source: [BH1750 Datasheet](https://www.mouser.com/ds/2/348/bh1750fvi-e-186247.pdf)
 
 ### Espressif ESP-14
-[ToDo]
+The revision 14 in this module's name suggests this board uses a relatively recent iteration of the ESP8266 powered modules, a successor of the pretty awesome ESP-12. However, investigation shows that this module is actually a weird outlyer. 
+
+> [Elliot Williams (Hackaday)](https://hackaday.com/2017/02/13/hacking-on-the-weirdest-esp-module/) 
+> "Sometimes I see a component that’s bizarre enough that I buy it just to see if I can actually do something with it. That’s the case with today’s example, the ESP-14. At first glance, you’d ask yourself what AI Thinker, the maker of many of the more popular ESP8266 modules, was thinking. (...) Slaving the ESP8266 to an STM8S is like taking a Ferrari and wrapping it inside a VW Beetle."  
+
+Nothing wrong with the ESP mcu, but the fact that they threw in a (dirt cheap, 8-bit) STM8003 makes me worry that programming this device will not be as straight forward as I hoped. What is the role of the STM in this module? Is it responsible for handling the I2C communication? How does it interface with the ESP?  
+
+DiyMore must have chosen the ESP-14 for a reason. Perhaps I can use the STM to pull the ESP from a deep sleep, low power, state and have the module run on a battery for years. Or was it just because it's cheap?
+
+I did not expect the ESP to block my progress... 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to add or change so we can have an open discussion on this.
@@ -112,3 +121,5 @@ This board was featured in Andreas Spiess' mailbox video on YouTube:
 [Mailbag incl. defective LiPo, Co2 sensor, ESP8266 Sensor module, RPi PoE, 120V inverter, OneThinx](https://www.youtube.com/watch?v=3M9biP1ilsE&t=770s) (9 June 2019)
 
 I2C - https://en.wikipedia.org/wiki/I%C2%B2C | https://i2c.info/
+
+ESP-14 - [Hacking on the weirdest ESP module](https://hackaday.com/2017/02/13/hacking-on-the-weirdest-esp-module/) | Hackaday
